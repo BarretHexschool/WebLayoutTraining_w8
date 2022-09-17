@@ -7,53 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%- title %></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Paytone+One&family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/37e1ba43c0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/style/all.css">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom p-0 mb-lg-10">
+      <div class="container">
+        <h1 class="flex-grow-1 py-4 py-lg-8 border-end-lg border-lg-1"><a href="index.html"><img class="nav-logo" src="./assets/images/logo.svg" alt="logo"></a></h1>
+        
+        <form action="#" class="d-flex ms-auto border-lg-left align-items-center">
+          <div class="d-none d-md-block px-lg-11 d-flex gap-6">
+          <div class="d-flex align-items-center justify-content-end">
+              <input type="search" class="form-control bg-light border-0 " id="search" placeholder="搜尋作品名稱、藝術家名稱">
+              <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+          <div class="offcanvas offcanvas-top bg-light px-3 fs-7 d-md-none border-bottom" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-body container d-flex justify-content-between">
+              <div class="d-flex align-items-center w-100">
+                <button type="button" class="btn p-0 border-0 me-4" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-angle-left"></i></button>
+                <input type="search" class="form-control p-0 bg-light border-0 fs-9" id="search" placeholder="搜尋作品名稱、藝術家名稱">
+                <button type="submit" class="btn p-0 border-0">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <button class="btn border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+          <i class="fa-solid p-0 fa-magnifying-glass"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <button class="p-0 navbar-toggler border-0 nav-hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fs-7 ps-5 fa-solid fa-bars"></i>
+          <i class="fs-7 ps-5 fa-solid fa-xmark d-none"></i>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-lg-0">
+            <li class="nav-item bg-white bg-lg-transparent mx-n3 mx-lg-auto">
+              <a class="nav-link text-center fs-7 py-5 border-bottom border-bottom-lg-0 mx-3 px-lg-11 border-start-lg border-lg-1 mx-lg-0 fs-lg-8 py-lg-10" href="explore.html">探索</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+            <li class="nav-item bg-white bg-lg-transparent mx-n3 mx-lg-auto">
+              <a class="nav-link text-center fs-7 py-5 border-bottom border-bottom-lg-0 mx-3 px-lg-11 border-start-lg border-lg-1 mx-lg-0 fs-lg-8 py-lg-10" href="#">市值</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+            <li class="nav-item bg-white bg-lg-transparent mx-n3 pb-5 pb-lg-0 mx-lg-auto  border-start-lg border-lg-1 d-lg-flex align-items-center">
+              <a class="d-lg-none nav-link text-center fs-7 py-3  border mx-3 bg-primary bg-lg-transparent border-lg-0 mt-n1" href="#">
+              連結錢包</a>
+              <a class="nav-link d-none d-lg-block px-lg-11 mt-lg-0 mx-lg-0 py-lg-10 text-black" href="#">
+                <i class="fa-solid fa-wallet fs-5"></i>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
+                
+            
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
 
     <%- contents %>
 
-    <footer class="footer">
-      footer
+    <footer class="footer pt-2 border-top border-1">
+      <p class="py-5 border-top border-4 text-center">© ART NFT. All Rights Reserved</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
   </body>

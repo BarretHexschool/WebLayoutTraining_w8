@@ -1,0 +1,13 @@
+.nav-logo{
+    height: 18px;
+    @include media-breakpoint-up(lg){
+        height: 40px;
+    }
+}
+.modal-backdrop.show {
+    opacity: 0;
+}
+.offcanvas{
+    height: 50px;
+}
+

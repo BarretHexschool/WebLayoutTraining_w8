@@ -1,0 +1,203 @@
+// Ranking
+.ranking-img{
+  width: 87px;
+  img{
+    height: 100%;
+  }
+  &-lg{
+    width: 87px;
+    img{
+      height: 100%;
+    }
+    @include media-breakpoint-up(lg){
+      width: 100%;
+      height: 375px;
+      img{
+          min-width: 100%;
+      }
+    }
+  }
+}
+
+.btn-ranking{
+  display: block;
+  text-align-last: left;
+  &:hover{
+    .ranking-img{
+      position: relative;
+    }
+    .ranking-img-hover{
+      display: block !important;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba(0,0,0,0.7);
+      color: $white;
+      &::after{
+        content:"";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-left: 16px transparent solid;
+        border-bottom: 16px $primary solid;
+      }
+    }
+    .ranking-img-hover-lg{
+      display: flex !important;
+      position: absolute;
+      z-index: 1;
+      background-color: rgba(0,0,0,0.7);
+      color: $white;
+      &::after{
+        content:"";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-left: 16px transparent solid;
+        border-bottom: 16px $primary solid;
+      }
+
+      @include media-breakpoint-up(lg){
+        background-color: rgba(0,0,0,0.5);
+        align-items: end;
+        &::after{
+          content:"";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          border-left: 16px transparent solid;
+          border-bottom: 16px $black solid;
+          z-index: 2;
+        }
+      }
+    }
+}
+}
+.ranking-card {
+  @include media-breakpoint-up(lg){
+    position: relative;
+    .card-header{
+      position: absolute;
+      z-index: 2;
+      background-color: $white; 
+      height: 60px;
+      width: 60px;
+      border: solid $black;
+      border-width: 0 1px 1px 0;
+    }
+  }
+}
+
+//artist
+.artist-swiper {
+  .swiper-slide {
+    &-prev,
+    &-next {
+      @include media-breakpoint-up(lg) {
+        
+        width: calc(25% - 24px) !important;
+        .card-text{
+          display: none;
+        }
+      }
+      filter: grayscale(1);
+    }
+    &-active {
+      @include media-breakpoint-up(lg) {
+        width: 50% !important;
+      }
+      .card {
+        &-body,
+        &-text {
+          display: flex;
+        }
+      }
+      .card-img-top {
+        &::before {
+          padding-top: 70%;
+        }
+      }
+    }
+  }
+  .card {
+    &-img-top {
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 70%;
+        @include media-breakpoint-up(lg) {
+          padding-top: 100%;
+        }
+      }
+      > img {
+        object-fit: cover;
+      }
+    }
+    &-body {
+      display: flex;
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+    &-text {
+      display: flex;
+      @include media-breakpoint-up(lg) {
+        // display: none;
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+        max-width: 307px;
+        background-color: rgba(255, 255, 255, 0.85) !important;
+
+      }
+    }
+  }
+  .swiper-pagination-bullet {
+    border-radius: 0;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    &-active {
+      --swiper-theme-color: #{$primary};
+      --swiper-pagination-bullet-width: 16px;
+    }
+  }
+}
+
+
+//artwork
+.artwork-img{
+  width: 140px;
+  height: 100%;
+  @include media-breakpoint-up(md) {
+    width: 190px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 258px;
+  }
+
+}
+
+.btn-artwork{
+  @include media-breakpoint-up(md){
+    &:hover{
+      .card-text{
+        display: block !important;
+        background-color: rgba(0,0,0,0.7);        
+      }
+      .text-box{
+        z-index: 1;
+      }
+      .btn-triangle:hover{
+        &::after{
+          border-bottom: 16px $primary solid;
+        }
+      }
+      .btn-white:hover{
+        background-color: $white;
+        border:1px solid $black;
+        color: $black;
+      }
+
+    }
+}
+}

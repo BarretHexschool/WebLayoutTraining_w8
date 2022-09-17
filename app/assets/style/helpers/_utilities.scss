@@ -21,7 +21,7 @@ $utilities: map-merge(
         100: 100%,
         )
     ),
-    
+
     //最小高度
 
     "min-high": (
@@ -119,6 +119,7 @@ $utilities: map-merge(
     // scss-docs-end utils-position
     // scss-docs-start utils-borders
     "border": (
+      responsive: true,
       property: border,
       values: (
         null: $border-width solid $border-color,
@@ -126,6 +127,7 @@ $utilities: map-merge(
       )
     ),
     "border-top": (
+      responsive: true,
       property: border-top,
       values: (
         null: $border-width solid $border-color,
@@ -133,6 +135,7 @@ $utilities: map-merge(
       )
     ),
     "border-end": (
+      responsive: true,
       property: border-right,
       class: border-end,
       values: (
@@ -141,6 +144,7 @@ $utilities: map-merge(
       )
     ),
     "border-bottom": (
+      responsive: true,
       property: border-bottom,
       values: (
         null: $border-width solid $border-color,
@@ -148,6 +152,7 @@ $utilities: map-merge(
       )
     ),
     "border-start": (
+      responsive: true,
       property: border-left,
       class: border-start,
       values: (
@@ -161,6 +166,7 @@ $utilities: map-merge(
       values: map-merge($theme-colors, ("white": $white))
     ),
     "border-width": (
+      responsive: true,
       property: border-width,
       class: border,
       values: $border-widths
@@ -464,8 +470,14 @@ $utilities: map-merge(
     "font-family": (
       property: font-family,
       class: font,
-      values: (monospace: var(--#{$variable-prefix}font-monospace))
+      values: (
+        base: var(--#{$variable-prefix}font-sans-serif),
+        monospace: var(--#{$variable-prefix}font-monospace),
+        squada: $font-family-squada,
+        pay:$font-family-paytone,
+      )
     ),
+
     "font-size": (
       responsive: true,
       rfs: false, //這裡有改
@@ -479,6 +491,7 @@ $utilities: map-merge(
       values: italic normal
     ),
     "font-weight": (
+      responsive: true,
       property: font-weight,
       class: fw,
       values: (
@@ -495,9 +508,11 @@ $utilities: map-merge(
       class: lh,
       values: (
         1: 1,
+        144: 1.444444444444444,
         sm: $line-height-sm,
         base: $line-height-base,
         lg: $line-height-lg,
+        squada: $line-height-squada,
       )
     ),
     "text-align": (

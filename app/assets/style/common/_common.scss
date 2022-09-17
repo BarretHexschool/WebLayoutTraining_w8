@@ -1,0 +1,82 @@
+ul {
+    margin-bottom: 0;
+  }
+h1{
+  margin-bottom: 0;
+  line-height: 0;
+}
+p{
+  margin-bottom: 0;
+}
+.btn{
+  padding: 0;
+}
+
+.writing-vertical {
+  writing-mode: vertical-lr;
+}
+
+.letter-spacing {
+  letter-spacing: .4rem;
+}
+
+.object-top {
+  object-fit: cover;
+  object-position: top;
+}
+
+//老師的 code
+.btn-triangle  {
+  position: relative;
+  &::after{
+    content:"";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-left: 16px transparent solid;
+    border-bottom: 16px $primary solid;
+  }
+  &:hover{
+    &::after{
+      border-bottom: 16px black solid;
+    }
+  }
+}
+
+
+.btn-white{
+  background-color: $white;
+  border:1px solid black;
+  padding: 8px 48px;
+  font-size: 18px;
+  line-height: 1.055555555555556;
+  font-family: $font-family-squada;
+  &:hover{
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.btn-white-hover{
+  background-color: $primary;
+  border:1px solid $black;
+  color: $white;
+  padding: 8px 48px;
+  font-size: 18px;
+  line-height: 1.055555555555556;
+  font-family: $font-family-squada;
+  z-index: 1;
+}
+
+.btn-border
+{
+  padding: 8px 48px;
+  font-size: 18px;
+  line-height: 1.055555555555556;
+  font-family: $font-family-squada;
+  &:hover{
+    background-color: $primary;
+    color: $white;
+    border: 1px solid black;
+  }
+}
